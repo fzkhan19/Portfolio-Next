@@ -16,8 +16,7 @@
     }
   },
   "lint-staged": {
-    "{*}":["biome lint --write","biome format --write"],
-    "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": "biome check --write"
+    "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": "bunx @biomejs/biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
