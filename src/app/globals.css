@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.leaflet-container {
+  min-height: 50vh;
+  z-index: 1;
+}
+
+.leaflet-control-attribution{
+  display: none;
+}
+
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+}
+
+@layer base {
+  :root {
+    --background: 74 56% 98%;
+    --foreground: 86 70% 12%;
+    --muted: 44 34% 85%;
+    --muted-foreground: 44 8% 34%;
+    --popover: 74 56% 97%;
+    --popover-foreground: 74 56% 2%;
+    --card: 74 56% 97%;
+    --card-foreground: 86 70% 12%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --primary: 84.47 65.16% 68.21%;
+    --primary-foreground: 86 70% 12%;
+    --secondary: 44 53% 85%;
+    --secondary-foreground: 44 53% 25%;
+    --accent: 104 53% 85%;
+    --accent-foreground: 104 53% 5%;
+    --destructive: 2 81% 25%;
+    --destructive-foreground: 2 81% 85%;
+    --ring: 74 53% 85%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 74 31% 1%;
+    --foreground: 74 38% 98%;
+    --muted: 44 34% 15%;
+    --muted-foreground: 44 8% 66%;
+    --popover: 74 31% 2%;
+    --popover-foreground: 74 38% 99%;
+    --card: 74 31% 2%;
+    --card-foreground: 74 38% 99%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --primary: 74 53% 85%;
+    --primary-foreground: 74 53% 5%;
+    --secondary: 44 53% 85%;
+    --secondary-foreground: 44 53% 25%;
+    --accent: 104 53% 85%;
+    --accent-foreground: 104 53% 5%;
+    --destructive: 2 81% 57%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 74 53% 85%;
+  }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
