@@ -23,7 +23,7 @@
 		"commands": [
 			{
 				"match": "\\.(js|ts|jsx|tsx)$",
-				"cmd": "bun x @biomejs/biome lint ${file} --write --unsafe"
+				"cmd": "bunx @biomejs/biome lint ${file} --write --unsafe"
 			}
 		]
 	},
