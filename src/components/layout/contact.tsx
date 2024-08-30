@@ -19,6 +19,7 @@ export default function Contact() {
 							Want to chat? Just shoot me a dm{" "}
 							<Link
 								href={DATA.contact.social.WhatsApp.url}
+								target="_blank"
 								className="items-center gap-x-2 text-green-500 hover:underline"
 							>
 								on WhatsApp <IconBrandWhatsapp className="inline size-5" />
@@ -26,6 +27,7 @@ export default function Contact() {
 							or{" "}
 							<Link
 								href={DATA.contact.social.X.url}
+								target="_blank"
 								className="text-blue-500 hover:underline"
 							>
 								with a direct question on Twitter{" "}

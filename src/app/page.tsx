@@ -2,6 +2,7 @@ import Contact from "@/components/layout/contact";
 import Hero from "@/components/layout/hero";
 import LifeChangelog from "@/components/layout/life-changelog";
 import Projects from "@/components/layout/projects";
+import Spotify from "@/components/spotify";
 
 export default function Home() {
 	return (
@@ -14,6 +15,8 @@ export default function Home() {
 				<LifeChangelog />
 
 				<Contact />
+
+				<Spotify />
 			</div>
 		</article>
 	);

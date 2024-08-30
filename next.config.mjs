@@ -8,6 +8,7 @@ const nextConfig = {
 			"th.bing.com",
 			"briskteq.com",
 			"www.gtu.ac.in",
+			"i.scdn.co",
 		],
 	},
 };

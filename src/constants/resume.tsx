@@ -52,7 +52,7 @@ export const DATA = {
 			},
 			X: {
 				name: "X",
-				url: "https://x.com/__unfaized",
+				url: "https://x.com/unfaized__",
 				icon: Icons.x,
 
 				navbar: true,
