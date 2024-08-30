@@ -57,6 +57,12 @@ export const DATA = {
 
 				navbar: true,
 			},
+			WhatsApp: {
+				name: "WhatsApp",
+				url: "https://api.whatsapp.com/send/?phone=917802844364&text=I+want+to+work+on+a+project+with+you&type=phone_number&app_absent=0",
+				icon: Icons.whatsapp,
+				navbar: false,
+			},
 			Email: {
 				name: "Send Email",
 				url: "mailto:faizpathan1717@gmail.com",

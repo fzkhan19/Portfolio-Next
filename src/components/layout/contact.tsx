@@ -1,4 +1,5 @@
 import { BLUR_FADE_DELAY, DATA } from "@/constants/resume";
+import { IconBrandTwitter, IconBrandWhatsapp } from "@tabler/icons-react";
 import Link from "next/link";
 import BlurFade from "../ui/blur-fade";
 
@@ -14,13 +15,21 @@ export default function Contact() {
 						<h2 className="font-bold text-3xl tracking-tighter md:text-5xl">
 							Get in Touch
 						</h2>
-						<p className="mx-auto max-w-[600px] text-muted-foreground md:text-lg">
+						<p className="mx-auto max-w-[600px] text-pretty text-muted-foreground md:text-lg">
 							Want to chat? Just shoot me a dm{" "}
+							<Link
+								href={DATA.contact.social.WhatsApp.url}
+								className="items-center gap-x-2 text-green-500 hover:underline"
+							>
+								on WhatsApp <IconBrandWhatsapp className="inline size-5" />
+							</Link>{" "}
+							or{" "}
 							<Link
 								href={DATA.contact.social.X.url}
 								className="text-blue-500 hover:underline"
 							>
-								with a direct question on twitter
+								with a direct question on Twitter{" "}
+								<IconBrandTwitter className="inline size-5" />
 							</Link>{" "}
 							and I&apos;ll respond whenever I can. I will ignore all
 							soliciting.
