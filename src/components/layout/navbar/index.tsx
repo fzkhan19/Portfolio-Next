@@ -16,14 +16,13 @@ import {
 	SheetTrigger,
 } from "../../ui/sheet";
 
-import { CONTENT } from "@/constants/content";
-import { IconLeaf } from "@tabler/icons-react";
-import { ToggleTheme as ToggleThemeComponent } from "../toggle-theme";
 import {
 	NavigationMenu,
-	NavigationMenuList,
 	NavigationMenuItem,
+	NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import Image from "next/image";
+import { ToggleTheme as ToggleThemeComponent } from "../toggle-theme";
 
 interface RouteProps {
 	href: string;
@@ -40,24 +39,20 @@ const CustomNavigationMenu = React.memo(() => {
 	const routeList: RouteProps[] = useMemo(
 		() => [
 			{
-				href: "/",
-				label: "Home",
-			},
-			{
-				href: "/services",
-				label: "Services",
-			},
-			{
-				href: "/about",
+				href: "#about",
 				label: "About",
 			},
 			{
-				href: "/portfolio",
-				label: "Portfolio",
+				href: "#projects",
+				label: "Projects",
 			},
 			{
-				href: "/contact",
+				href: "#contact",
 				label: "Contact",
+			},
+			{
+				href: "/blog",
+				label: "Blog",
 			},
 		],
 		[],
@@ -86,24 +81,20 @@ export const Navbar = () => {
 	const routeList: RouteProps[] = useMemo(
 		() => [
 			{
-				href: "/",
-				label: "Home",
-			},
-			{
-				href: "/about",
+				href: "#about",
 				label: "About",
 			},
 			{
-				href: "/services",
-				label: "Services",
+				href: "#projects",
+				label: "Projects",
 			},
 			{
-				href: "/portfolio",
-				label: "Portfolio",
-			},
-			{
-				href: "/contact",
+				href: "#contact",
 				label: "Contact",
+			},
+			{
+				href: "/blog",
+				label: "Blog",
 			},
 		],
 		[],
@@ -112,7 +103,7 @@ export const Navbar = () => {
 	return (
 		<header
 			className={cn(
-				"absolute top-5 right-0 left-0 z-40 mx-auto flex w-[90%] items-center justify-between",
+				"sticky top-5 right-0 left-0 z-40 mx-auto flex w-[90%] items-center justify-between",
 				"rounded-2xl border border-secondary p-4",
 				"shadow-[0_0px_10px_rgb(0,0,0,0.2)] shadow-primary/30",
 				"border-0 hover:shadow-primary/70",
@@ -122,12 +113,11 @@ export const Navbar = () => {
 			)}
 		>
 			<Link
-				className="flex items-center gap-3 px-2 font-extrabold text-lime-800 text-xl dark:text-lime-200"
+				className="flex items-center gap-4 px-2 font-extrabold text-xl"
 				href="/"
 			>
-				{/* <MemoizedImage src="/logo.svg" width={32} height={32} alt="logo" /> */}
-				<IconLeaf />
-				{CONTENT.PRODUCT_TITLE}
+				<Image src={"/logo.png"} alt="logo" width={24} height={24} />
+				Faiz Khan
 			</Link>
 
 			{/* <!-- Mobile --> */}
@@ -147,11 +137,16 @@ export const Navbar = () => {
 							<SheetHeader className="mb-4 ml-4">
 								<SheetTitle className="flex items-center">
 									<Link
-										className="flex items-center gap-2 font-bold text-lg text-lime-700 dark:text-lime-200"
+										className="flex items-center gap-3 font-bold text-lg "
 										href="/"
 									>
-										<IconLeaf />
-										{CONTENT.PRODUCT_TITLE}
+										<Image
+											src={"/logo.png"}
+											alt="logo"
+											width={24}
+											height={24}
+										/>
+										Faiz Khan
 									</Link>
 								</SheetTitle>
 							</SheetHeader>

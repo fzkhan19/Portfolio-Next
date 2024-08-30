@@ -1,11 +1,11 @@
 import Providers from "@/components/layout/Providers";
-import Footer from "@/components/layout/footer";
-import { Navbar } from "@/components/layout/navbar";
+import Dockbar from "@/components/layout/dockbar";
+import { Toaster } from "@/components/ui/sonner";
 import { JSON_LD, METADATA } from "@/constants/Metadata";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,19 +18,18 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body className={inter.className}>
-				<Providers>
-					<Navbar />
-					<main className="no-scrollbar m-0 overflow-x-hidden overflow-y-scroll scroll-smooth p-0">
-						<script
-							// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
-							dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
-							type="application/ld+json"
-						/>
+			<body className={cn("", inter.className)}>
+				<main className="no-scrollbar overflow-x-hidden overflow-y-scroll scroll-smooth">
+					<script
+						// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+						dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+						type="application/ld+json"
+					/>
+					<Providers>
 						{children}
-						<Footer />
-					</main>
-				</Providers>
+						<Dockbar />
+					</Providers>
+				</main>
 				<Toaster richColors closeButton position="top-right" />
 			</body>
 		</html>

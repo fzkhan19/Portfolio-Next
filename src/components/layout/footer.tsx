@@ -26,7 +26,7 @@ export default function Footer() {
 		<footer className="relative mt-8 flex w-full flex-col items-start justify-center gap-16 border-primary border-t">
 			<div className="mt-8 ml-8 flex w-full flex-col items-start justify-center gap-16 md:ml-0 md:flex-row">
 				<div className="flex flex-col gap-2 md:mr-28">
-					<h2 className="font-extrabold text-3xl text-lime-800 dark:text-lime-200">
+					<h2 className="font-extrabold text-3xl text-lime-800 ">
 						LANDSCAPERS
 					</h2>
 					<p className="w-56 text-sm">
@@ -34,16 +34,16 @@ export default function Footer() {
 					</p>
 					<div className="-ml-1 mt-2 flex gap-4">
 						<Link href="">
-							<IconBrandFacebook className="text-lime-700" />
+							<IconBrandFacebook className="" />
 						</Link>
 						<Link href="">
-							<IconBrandInstagram className="text-lime-700" />
+							<IconBrandInstagram className="" />
 						</Link>
 						<Link href="">
-							<IconBrandYoutube className="text-lime-700" />
+							<IconBrandYoutube className="" />
 						</Link>
 						<Link href="">
-							<IconBrandTwitter className="text-lime-700" />
+							<IconBrandTwitter className="" />
 						</Link>
 					</div>
 				</div>

@@ -2,7 +2,13 @@
 import MillionLint from "@million/lint";
 const nextConfig = {
 	images: {
-		domains: ["placehold.co"],
+		domains: [
+			"placehold.co",
+			"api.microlink.io",
+			"th.bing.com",
+			"briskteq.com",
+			"www.gtu.ac.in",
+		],
 	},
 };
 export default MillionLint.next({
