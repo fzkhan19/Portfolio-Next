@@ -1,16 +1,22 @@
 import type { Metadata } from "next";
 
-const title: string = "Best Landscape Design & Maintenance - Landscaper";
+const title: string = "Portfolio - Faiz Khan";
 const description: string =
-	"We are proud to be a responsible and sustainable lawn care company, dedicated to preserving the environment and the health of your lawn";
+	"Portfolio of Faiz Khan, a software engineer and freelancer with a passion for creating innovative solutions.";
 
-// TODO: Change to original url when releasing
-export const url: string = "https://landscaper-lime.vercel.app";
+const url: string = ""; // TODO: Change to the original URL when releasing
 
 export const METADATA: Metadata = {
 	title: title,
 	description: description,
-	keywords: [],
+	keywords: [
+		"Faiz Khan",
+		"Software Engineer",
+		"Freelancer",
+		"Portfolio",
+		"Web Development",
+		"Software Development",
+	],
 	manifest: "/manifest.webmanifest",
 	icons: [
 		{
@@ -34,20 +40,8 @@ export const METADATA: Metadata = {
 		{
 			rel: "icon",
 			type: "image/png",
-			sizes: "32x32",
-			url: "/favicon/favicon-32x32.png",
-		},
-		{
-			rel: "icon",
-			type: "image/png",
 			sizes: "96x96",
 			url: "/favicon/favicon-96x96.png",
-		},
-		{
-			rel: "icon",
-			type: "image/png",
-			sizes: "16x16",
-			url: "/favicon/favicon-16x16.png",
 		},
 		{
 			rel: "apple-touch-icon",
@@ -99,7 +93,7 @@ export const METADATA: Metadata = {
 		title,
 		description,
 		type: "website",
-		siteName: "{Title}",
+		siteName: "Portfolio - Faiz Khan",
 		url: url,
 		images: [
 			{
@@ -113,7 +107,7 @@ export const METADATA: Metadata = {
 		title,
 		description,
 		card: "summary_large_image",
-		creator: "@FaizKhan",
+		creator: "@unfaized__",
 		creatorId: "10267032498603556917",
 		images: [
 			{
@@ -127,59 +121,38 @@ export const METADATA: Metadata = {
 
 export const JSON_LD = {
 	"@context": "https://schema.org",
-	"@type": "Landscaping",
-	name: "{Title}",
+	"@type": "Person",
+	name: "Faiz Khan",
 	url: url,
-	logo: `${url}/opengraph-image.png`,
 	image: `${url}/opengraph-image.png`,
-	description: "{Description}",
-	areaServed: {
-		"@type": "Place",
-		name: "London",
-		address: {
-			"@type": "PostalAddress",
-			addressLocality: "London",
-			addressCountry: "GB",
-		},
+	description:
+		"Portfolio of Faiz Khan, a software engineer and freelancer with expertise in various technologies and a passion for creating innovative solutions.",
+	jobTitle: "Software Engineer",
+	worksFor: {
+		"@type": "Organization",
+		name: "Freelance",
 	},
-	serviceType: "Landscaping Service",
-	availableService: [
-		{
-			"@type": "Service",
-			serviceType: "",
-			description: "",
-		},
-		{
-			"@type": "Service",
-			serviceType: "{}",
-			description: "",
-		},
-	],
-	offers: {
-		"@type": "Offer",
-		url: `${url}`,
-		priceCurrency: "GBP",
-		price: "Varies",
-		eligibleRegion: {
-			"@type": "Place",
-			name: "London",
-		},
-		availability: "https://schema.org/InStock",
-		itemOffered: {
-			"@type": "Service",
-			serviceType: "Landscaping",
-		},
+	address: {
+		"@type": "PostalAddress",
+		addressLocality: "India",
+		addressCountry: "IN",
 	},
 	contactPoint: {
 		"@type": "ContactPoint",
-		telephone: "+44-20-12345678",
+		telephone: "+917802844364",
 		contactType: "Customer Service",
 		availableLanguage: "English",
-		areaServed: "GB",
+		areaServed: "Worldwide",
 	},
 	sameAs: [
-		"https://www.facebook.com/",
-		"https://www.twitter.com/",
-		"https://www.instagram.com/",
+		"https://www.linkedin.com/in/fzkhan19",
+		"https://twitter.com/unfaized__",
+		"https://www.instagram.com/unfaized__",
 	],
+	hasOccupation: {
+		"@type": "Occupation",
+		name: "Software Engineer",
+		description:
+			"Develops and maintains software applications, specializing in web development and innovative solutions.",
+	},
 };

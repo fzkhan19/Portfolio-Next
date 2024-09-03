@@ -1,6 +1,5 @@
 import Providers from "@/components/layout/Providers";
 import Dockbar from "@/components/layout/dockbar";
-import { Toaster } from "@/components/ui/sonner";
 import { JSON_LD, METADATA } from "@/constants/Metadata";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
@@ -30,7 +29,6 @@ export default function RootLayout({
 						<Dockbar />
 					</Providers>
 				</main>
-				<Toaster richColors closeButton position="top-right" />
 			</body>
 		</html>
 	);
