@@ -21,7 +21,13 @@ const config = {
 			},
 		},
 		extend: {
+			fontFamily: {
+				mr: ["var(--font-mr)"],
+				in: ["var(--font-in)"],
+			},
 			colors: {
+				dark: "#1b1b1b",
+				light: "#fff",
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",
 				ring: "hsl(var(--ring))",
@@ -93,7 +99,12 @@ const config = {
 			},
 		},
 	},
-	plugins: [require("tailwindcss-animate"), addVariablesForColors],
+	plugins: [
+		require("tailwindcss-animate"),
+		addVariablesForColors,
+		require("@tailwindcss/forms"),
+		require("@tailwindcss/typography"),
+	],
 } satisfies Config;
 
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>

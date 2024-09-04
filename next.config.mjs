@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
-import MillionLint from "@million/lint";
+// import MillionLint from "@million/lint";
+import { withContentlayer } from "next-contentlayer";
 const nextConfig = {
 	images: {
 		domains: [
@@ -11,7 +12,10 @@ const nextConfig = {
 			"i.scdn.co",
 		],
 	},
+	swcMinify: true,
 };
-export default MillionLint.next({
-	rsc: true,
-})(nextConfig);
+export default withContentlayer({ ...nextConfig });
+
+// export default MillionLint.next({
+// 	rsc: true,
+// })(nextConfig);
