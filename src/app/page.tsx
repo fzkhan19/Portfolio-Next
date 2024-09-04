@@ -1,5 +1,5 @@
+import Hero from "@/components/layout/Hero";
 import Contact from "@/components/layout/contact";
-import Hero from "@/components/layout/hero";
 import LifeChangelog from "@/components/layout/life-changelog";
 import Projects from "@/components/layout/projects";
 import Spotify from "@/components/spotify";
