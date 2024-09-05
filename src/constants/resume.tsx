@@ -13,7 +13,7 @@ export const DATA = {
 		"Fueled by coffee and a love for code, I’m a fullstack developer who turns caffeine into features. Always tinkering with the latest tech to bring ideas to life.",
 	summary:
 		"In 2024, I took my developer game up a notch by diving headfirst into fullstack development and product creation. From my MERN stack beginnings, I’ve expanded into React, Next.js, and Node.js, all while keeping my coffee addiction fueled. I’ve even launched a shiny new product called takeoff.com! When I’m not busy coding or hunting for the perfect coffee blend, I’m dreaming up my next big idea.",
-	avatarUrl: "/john-doe.png",
+	avatarUrl: "/me.png",
 
 	skills: [
 		"React",
@@ -176,7 +176,7 @@ export const DATA = {
 		{
 			title: "Metis",
 			href: "https://metis-chat.vercel.app/",
-			dates: "July 2024 - Present",
+			dates: "July 2024 - July 2024",
 			active: true,
 			description:
 				"AI chat application with context-aware responses, real-time streaming, and Redis integration for efficient data handling.",
@@ -206,7 +206,7 @@ export const DATA = {
 		{
 			title: "Landscaper",
 			href: "https://landscaper-lime.vercel.app/",
-			dates: "July 2024 - Present",
+			dates: "July 2024 - August 2024",
 			active: true,
 			description:
 				"Website solution for landscaping businesses, featuring client management, and service showcase.",
@@ -229,7 +229,7 @@ export const DATA = {
 		{
 			title: "VoteIn",
 			href: "https://vote-in.up.railway.app/",
-			dates: "July 2024 - Present",
+			dates: "June 2024 - June 2024",
 			active: true,
 			description:
 				"Real-time voting platform with live updates, utilizing Next.js and Socket.IO for dynamic user interactions.",
@@ -252,7 +252,7 @@ export const DATA = {
 		{
 			title: "Google Review Scraper",
 			href: "",
-			dates: "November 2023 - Present",
+			dates: "November 2023 - November 2023",
 			active: true,
 			description:
 				"Tool for scraping Google Maps reviews using Puppeteer, designed to gather and analyze customer feedback.",
@@ -293,7 +293,7 @@ export const DATA = {
 		{
 			title: "whack-a-mole",
 			href: "https://moley-whack.netlify.app/",
-			dates: "October 2023 - Present",
+			dates: "October 2023 - October 2023",
 			active: true,
 			description:
 				"Fun React mini game with simple mechanics, developed in a short time-frame.",

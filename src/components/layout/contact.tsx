@@ -1,4 +1,5 @@
 import { BLUR_FADE_DELAY, DATA } from "@/constants/resume";
+import { cn } from "@/lib/utils";
 import { IconBrandTwitter, IconBrandWhatsapp } from "@tabler/icons-react";
 import Link from "next/link";
 import BlurFade from "../ui/blur-fade";
@@ -20,21 +21,32 @@ export default function Contact() {
 							<Link
 								href={DATA.contact.social.WhatsApp.url}
 								target="_blank"
-								className="items-center gap-x-2 text-green-500 hover:underline"
+								className={cn(
+									"items-center gap-x-2 text-green-500",
+									"relative after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-full",
+									"after:origin-bottom-left after:scale-x-100 after:bg-green-500 after:transition-transform",
+									"after:duration-300 after:ease-in-out hover:after:origin-bottom-right hover:after:scale-x-0",
+								)}
 							>
 								on WhatsApp <IconBrandWhatsapp className="inline size-5" />
 							</Link>{" "}
-							or{" "}
+							or{""}
+							<br />
 							<Link
 								href={DATA.contact.social.X.url}
 								target="_blank"
-								className="text-blue-500 hover:underline"
+								className={cn(
+									"items-center gap-x-2 text-blue-500",
+									"relative after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-full",
+									"after:origin-bottom-left after:scale-x-100 after:bg-blue-500 after:transition-transform",
+									"after:duration-300 after:ease-in-out hover:after:origin-bottom-right hover:after:scale-x-0",
+								)}
 							>
 								with a direct question on Twitter{" "}
 								<IconBrandTwitter className="inline size-5" />
 							</Link>{" "}
-							and I&apos;ll respond whenever I can. I will ignore all
-							soliciting.
+							and I&apos;ll respond whenever I can.
+							<br />I will ignore all soliciting.
 						</p>
 					</div>
 				</BlurFade>
