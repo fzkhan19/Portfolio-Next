@@ -24,12 +24,12 @@ const BlogLayoutTwo = ({ blog }: { blog: any }) => {
 				</Link>
 
 				<div className="col-span-12 w-full lg:col-span-8">
-					<span className="inline-block w-full font-semibold text-accent text-xs uppercase sm:text-sm dark:text-accentDark">
+					<span className="inline-block w-full font-semibold text-accent text-xs uppercase sm:text-sm">
 						{blog.tags[0]}
 					</span>
 					<Link href={blog.url} className="my-1 inline-block">
 						<h2 className="font-semibold text-base capitalize sm:text-lg">
-							<span className="bg-[length:0px_6px] bg-gradient-to-r bg-left-bottom from-accent/50 to-accent/50 bg-no-repeat transition-[background-size] duration-500 group-hover:bg-[length:100%_6px] dark:from-accentDark/50 dark:to-accentDark/50 ">
+							<span className="bg-[length:0px_6px] bg-gradient-to-r bg-left-bottom from-accent/50 to-accent/50 bg-no-repeat transition-[background-size] duration-500 group-hover:bg-[length:100%_6px] dark:from-accent/50 dark:to-accent/50">
 								{blog.title}
 							</span>
 						</h2>

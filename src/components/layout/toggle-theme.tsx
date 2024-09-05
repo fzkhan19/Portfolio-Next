@@ -11,7 +11,7 @@ export const ToggleTheme = ({ className }: { className?: string }) => {
 
 	return (
 		<Button
-			className={cn("p-6 ease-out", className)}
+			className={cn("p-6 ease-out hover:bg-primary/30", className)}
 			size="icon"
 			variant="ghost"
 			aria-label="Toggle theme"

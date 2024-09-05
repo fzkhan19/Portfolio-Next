@@ -13,15 +13,15 @@ const RecentPosts = ({ blogs }: { blogs: any }) => {
 				</h2>
 				<Link
 					href="/categories/all"
-					className="inline-block font-medium text-accent text-base underline underline-offset-2 md:text-lg dark:text-accentDark"
+					className="inline-block font-medium text-accent text-base underline underline-offset-2 md:text-lg dark:text-accent"
 				>
-					view all
+					View all
 				</Link>
 			</div>
 
 			<div className="mt-16 grid grid-cols-1 grid-rows-2 gap-16 sm:grid-cols-2 lg:grid-cols-3">
 				{/* biome-ignore lint/suspicious/noExplicitAny: <explanation> */}
-				{sortedBlogs.slice(4, 10).map((blog: any, index: number) => {
+				{sortedBlogs.slice(0, 10).map((blog: any, index: number) => {
 					return (
 						// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 						<article key={index} className="relative col-span-1 row-span-1">

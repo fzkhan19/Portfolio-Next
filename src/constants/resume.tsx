@@ -334,6 +334,11 @@ export const DATA = {
 					description:
 						"Built Metis, an AI-powered web assistant using Vercel AI SDK.\nCreated a video calling app with WebRTC.\nLaunched Vot-In, a real-time thought-sharing platform using WebSocket and Redis.\nFrom AI interactions to video calls and instant messaging, it's been a year of diverse tech adventures!",
 				},
+				{
+					heading: "Started Writing Blogs ✍️",
+					description:
+						"Embarked on a new journey of sharing knowledge through blogging. Exploring various tech topics and personal experiences to contribute to the developer community.",
+				},
 			],
 		},
 		{

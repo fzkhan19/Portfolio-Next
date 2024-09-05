@@ -21,7 +21,7 @@ const ViewCounter = ({
 					await redis.incr(`pageviews:${slug}`);
 				}
 				const viewCount = await redis.get<string>(`pageviews:${slug}`);
-				setViews(viewCount ? Number.parseInt(viewCount) : 0);
+				setViews(viewCount ? Number.parseInt(viewCount) / 2 : 0);
 			} catch (error) {
 				console.error(
 					"An error occurred while handling the view count:",

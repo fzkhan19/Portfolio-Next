@@ -26,7 +26,7 @@ export default function Navbar() {
 										href={item.href}
 										className={cn(
 											buttonVariants({ variant: "ghost", size: "icon" }),
-											"size-12 rounded-full",
+											"size-12 rounded-full hover:bg-primary/30",
 										)}
 									>
 										<item.icon className="size-4" />
@@ -49,7 +49,7 @@ export default function Navbar() {
 											href={social.url}
 											className={cn(
 												buttonVariants({ variant: "ghost", size: "icon" }),
-												"size-12 rounded-full",
+												"size-12 rounded-full hover:bg-primary/30",
 											)}
 										>
 											<social.icon className="size-4" />

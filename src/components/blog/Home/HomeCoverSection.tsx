@@ -28,7 +28,7 @@ const HomeCoverSection = ({ blogs }: { blogs: any }) => {
 					<Tag link={`/categories/${slug(blog.tags[0])}`} name={blog.tags[0]} />
 					<Link href={blog.url} className="mt-6">
 						<h1 className="font-bold text-lg capitalize sm:text-xl md:text-3xl lg:text-4xl">
-							<span className="bg-[length:0px_6px] bg-gradient-to-r bg-left-bottom from-accent to-accent bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_6px] dark:from-accentDark/50 dark:to-accentDark/50 ">
+							<span className="bg-[length:0px_6px] bg-gradient-to-r bg-left-bottom from-accent to-accent bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_6px] dark:from-accent/50 dark:to-accent/50 ">
 								{blog.title}
 							</span>
 						</h1>
