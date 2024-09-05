@@ -1,14 +1,15 @@
 import { Icons } from "@/components/icons";
+import { siteMetadata } from "@/lib/siteMetaData";
 import { HomeIcon, NotebookIcon } from "lucide-react";
 
-export const BLUR_FADE_DELAY = 0.2;
+export const BLUR_FADE_DELAY = 1.0;
 
 export const DATA = {
 	name: "Faiz Khan",
 	initials: "FK",
-	url: "https://bit.ly/faiz-khan",
+	url: siteMetadata.siteUrl,
 	location: "Gujarat, India",
-	locationLink: "https://www.google.com/maps/place/new+york",
+	locationLink: "https://www.google.com/maps/place/Surat+gujarat+india",
 	description:
 		"Fueled by coffee and a love for code, I’m a fullstack developer who turns caffeine into features. Always tinkering with the latest tech to bring ideas to life.",
 	summary:

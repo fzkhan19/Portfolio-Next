@@ -6,8 +6,8 @@ export const siteMetadata = {
 	description: "A blog created with Next.js, Tailwind.css and contentlayer.",
 	language: "en-us",
 	theme: "system", // system, dark or light
-	siteUrl: "https://create-blog-with-nextjs.vercel.app", // your website URL
-	siteLogo: "/logo.png",
+	siteUrl: "https://faiz-khan.in", // your website URL
+	siteLogo: "/sakura.png",
 	socialBanner: "/social-banner.png", // add social banner in the public folder
 	email: "faizpathan1717@gmail.com",
 	github: "https://github.com/fzkhan19",

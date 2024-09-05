@@ -59,6 +59,7 @@ export async function generateMetadata({
 		},
 	};
 }
+
 export default function Page({ params }: { params: { slug: string } }) {
 	const blog = allBlogs.find(
 		(blog: Blog) => blog._raw.flattenedPath === params.slug,
