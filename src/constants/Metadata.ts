@@ -1,23 +1,11 @@
+import { siteMetadata } from "@/lib/siteMetaData";
 import type { Metadata } from "next";
 
-const title: string = "Portfolio - Faiz Khan";
-const description: string =
-	"Portfolio of Faiz Khan, a software engineer and freelancer with a passion for creating innovative solutions.";
-
-const url: string = ""; // TODO: Change to the original URL when releasing
-
 export const METADATA: Metadata = {
-	title: title,
-	description: description,
-	keywords: [
-		"Faiz Khan",
-		"Software Engineer",
-		"Freelancer",
-		"Portfolio",
-		"Web Development",
-		"Software Development",
-	],
-	manifest: "/manifest.webmanifest",
+	title: siteMetadata.title,
+	description: siteMetadata.description,
+	keywords: siteMetadata.keywords,
+	manifest: siteMetadata.manifest,
 	icons: [
 		{
 			rel: "icon",
@@ -90,32 +78,50 @@ export const METADATA: Metadata = {
 		},
 	],
 	openGraph: {
-		title,
-		description,
-		type: "website",
+		title: siteMetadata.title,
+		description: siteMetadata.description,
 		siteName: "Portfolio - Faiz Khan",
-		url: url,
+		url: siteMetadata.siteUrl,
 		images: [
 			{
-				url: "/opengraph/opengraph-image.png",
+				url: "/opengraph-image.png",
 				width: 1200,
 				height: 630,
 			},
 		],
+		type: "website",
+		locale: "en_US",
+		countryName: "IN",
+		emails: ["faizpathan1717@gmail.com"],
+		phoneNumbers: ["+917802844364"],
+		ttl: 60,
 	},
 	twitter: {
-		title,
-		description,
+		title: siteMetadata.title,
+		description: siteMetadata.description,
 		card: "summary_large_image",
 		creator: "@unfaized__",
 		creatorId: "10267032498603556917",
 		images: [
 			{
-				url: "/opengraph/opengraph-image.png",
+				url: "/opengraph-image.png",
 				width: 1200,
 				height: 630,
 			},
 		],
+		site: siteMetadata.siteUrl,
+	},
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			noimageindex: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
 	},
 };
 
@@ -123,8 +129,8 @@ export const JSON_LD = {
 	"@context": "https://schema.org",
 	"@type": "Person",
 	name: "Faiz Khan",
-	url: url,
-	image: `${url}/opengraph-image.png`,
+	url: siteMetadata.siteUrl,
+	image: `${siteMetadata.siteUrl}/opengraph-image.png`,
 	description:
 		"Portfolio of Faiz Khan, a software engineer and freelancer with expertise in various technologies and a passion for creating innovative solutions.",
 	jobTitle: "Software Engineer",

@@ -36,4 +36,5 @@ export const siteMetadata = {
 	twitter: "https://twitter.com/unfaized__",
 	linkedin: "https://www.linkedin.com/in/fzkhan19/",
 	locale: "en-US",
+	manifest: "/manifest.webmanifest",
 };
