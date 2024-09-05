@@ -2,7 +2,7 @@ import { Icons } from "@/components/icons";
 import { siteMetadata } from "@/lib/siteMetaData";
 import { HomeIcon, NotebookIcon } from "lucide-react";
 
-export const BLUR_FADE_DELAY = 1.0;
+export const BLUR_FADE_DELAY = 0.2;
 
 export const DATA = {
 	name: "Faiz Khan",
