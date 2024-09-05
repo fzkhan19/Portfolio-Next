@@ -48,6 +48,7 @@ export const metadata = {
 		title: siteMetadata.title,
 		images: [siteMetadata.socialBanner],
 	},
+	keywords: siteMetadata.keywords,
 };
 
 export default function RootLayout({
