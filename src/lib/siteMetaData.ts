@@ -33,10 +33,7 @@ export const siteMetadata = {
 	socialBanner: "/opengraph-image.gif", // add social banner in the public folder
 	email: "faizpathan1717@gmail.com",
 	github: "https://github.com/fzkhan19",
-	twitter: "https://twitter.com/",
-	facebook: "https://facebook.com",
-	youtube: "https://youtube.com/codebucks",
-	linkedin: "https://www.linkedin.com/in/codebucks/",
-	dribbble: "https://www.dribbble.com",
+	twitter: "https://twitter.com/unfaized__",
+	linkedin: "https://www.linkedin.com/in/fzkhan19/",
 	locale: "en-US",
 };

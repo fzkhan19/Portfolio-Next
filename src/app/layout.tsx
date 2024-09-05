@@ -5,6 +5,7 @@ import { siteMetadata } from "@/lib/siteMetaData";
 import { cn } from "@/lib/utils";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
+import type { Metadata } from "next";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -18,10 +19,10 @@ const manrope = Manrope({
 	variable: "--font-mr",
 });
 
-export const metadata = {
-	metadataBase: new URL(siteMetadata.siteUrl),
-	title: siteMetadata.title, // a default is required when creating a template
+export const metadata: Metadata = {
+	title: siteMetadata.title,
 	description: siteMetadata.description,
+	metadataBase: new URL(siteMetadata.siteUrl),
 	openGraph: {
 		title: siteMetadata.title,
 		description: siteMetadata.description,
