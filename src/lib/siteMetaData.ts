@@ -4,8 +4,20 @@ export const siteMetadata = {
 	author: "Faiz Khan | Portfolio",
 	headerTitle: "Faiz Khan | Portfolio",
 	description:
-		"Explore the portfolio of Faiz Khan, showcasing his web development expertise with Next.js, Tailwind.css, and Contentlayer.",
+		"Explore the portfolio of Faiz Khan, showcasing my skills, projects, and experience as a fullstack developer",
 	language: "en-us",
+	technologies: [
+		"Next.js",
+		"React",
+		"Typescript",
+		"Node.js",
+		"TailwindCSS",
+		"Python",
+		"AWS",
+		"GCP",
+		"Docker",
+		"AI",
+	],
 	keywords: [
 		"Faiz Khan",
 		"Next.js",

@@ -1,6 +1,7 @@
 import Providers from "@/components/layout/Providers";
 import Dockbar from "@/components/layout/dockbar";
 import { JSON_LD, METADATA } from "@/constants/Metadata";
+import { siteMetadata } from "@/lib/siteMetaData";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
@@ -43,6 +44,12 @@ export default function RootLayout({
 						Software Development | Personal Website | Software Engineer | React
 						| Typescript | Node.js | Python | MongoDB | TailwindCSS | Express.js
 					</h1>
+					<h2>{siteMetadata.title}</h2>
+					<h2 className="sr-only">{siteMetadata.description}</h2>
+					<h2 className="sr-only">
+						Next.js | React | Typescript | Node.js | TailwindCSS | Python | AWS
+						| GCP | Docker | AI
+					</h2>
 					<Providers>
 						{children}
 						<Dockbar />
