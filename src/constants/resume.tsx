@@ -14,7 +14,7 @@ export const DATA = {
 		"Fueled by coffee and a love for code, I’m a fullstack developer who turns caffeine into features. Always tinkering with the latest tech to bring ideas to life.",
 	summary:
 		"In 2024, I took my developer game up a notch by diving headfirst into fullstack development and product creation. From my MERN stack beginnings, I’ve expanded into React, Next.js, and Node.js, all while keeping my coffee addiction fueled. I’ve even launched a shiny new product called takeoff.com! When I’m not busy coding or hunting for the perfect coffee blend, I’m dreaming up my next big idea.",
-	avatarUrl: "/me.png",
+	avatarUrl: "/me.webp",
 
 	skills: [
 		"React",

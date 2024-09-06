@@ -28,6 +28,8 @@ export default function Navbar() {
 											buttonVariants({ variant: "ghost", size: "icon" }),
 											"size-12 rounded-full hover:bg-primary/30",
 										)}
+										title={item.label}
+										aria-label={item.label}
 									>
 										<item.icon className="size-4" />
 									</Link>
@@ -51,6 +53,8 @@ export default function Navbar() {
 												buttonVariants({ variant: "ghost", size: "icon" }),
 												"size-12 rounded-full hover:bg-primary/30",
 											)}
+											title={name}
+											aria-label={name}
 										>
 											<social.icon className="size-4" />
 										</Link>

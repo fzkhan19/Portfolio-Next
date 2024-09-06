@@ -34,6 +34,15 @@ export default function RootLayout({
 						dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
 						type="application/ld+json"
 					/>
+					<h1 className="sr-only">
+						Faiz Khan | Portfolio | Fullstack Developer
+					</h1>
+					<h1 className="sr-only">
+						Faiz Khan | Next.js | Freelancer | Web Developer | Fullstack
+						Developer | Portfolio | Web Development | Portfolio Website | Blog |
+						Software Development | Personal Website | Software Engineer | React
+						| Typescript | Node.js | Python | MongoDB | TailwindCSS | Express.js
+					</h1>
 					<Providers>
 						{children}
 						<Dockbar />
