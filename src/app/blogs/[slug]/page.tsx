@@ -7,6 +7,7 @@ import { allBlogs } from "contentlayer/generated";
 import { slug } from "github-slugger";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 
 export async function generateMetadata({
 	params,
@@ -98,7 +99,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 
 	return (
 		<>
-			<script
+			<Script
 				type="application/ld+json"
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
