@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { allBlogs } from "contentlayer/generated";
 import { ImageResponse } from "next/og";
 
