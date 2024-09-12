@@ -1,4 +1,5 @@
-import querystring from "node:querystring";
+export const runtime = "edge";
+
 import { NextResponse } from "next/server";
 
 const {
@@ -7,7 +8,7 @@ const {
 	SPOTIFY_REFRESH_TOKEN: refresh_token,
 } = process.env;
 
-const basic = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
+const basic = btoa(`${client_id}:${client_secret}`);
 const NOW_PLAYING_ENDPOINT =
 	"https://api.spotify.com/v1/me/player/currently-playing";
 const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
@@ -19,15 +20,14 @@ const getAccessToken = async () => {
 			Authorization: `Basic ${basic}`,
 			"Content-Type": "application/x-www-form-urlencoded",
 		},
-		body: querystring.stringify({
+		body: new URLSearchParams({
 			grant_type: "refresh_token",
-			refresh_token,
+			refresh_token: refresh_token || "",
 		}),
 	});
 
 	return response.json();
 };
-
 const getNowPlaying = async () => {
 	const { access_token } = await getAccessToken();
 
