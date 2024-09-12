@@ -1,5 +1,3 @@
-export const runtime = "edge";
-
 import querystring from "node:querystring";
 import { NextResponse } from "next/server";
 
