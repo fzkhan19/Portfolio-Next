@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import BlogDetails from "@/components/blog/BlogDetails";
 import RenderMdx from "@/components/blog/RenderMdx";
 import Tag from "@/components/ui/tag";

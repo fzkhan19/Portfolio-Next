@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import BlogLayoutThree from "@/components/blog/BlogLayoutThree";
 import Categories from "@/components/blog/Categories";
 import { allBlogs } from "contentlayer/generated";
