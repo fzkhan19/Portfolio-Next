@@ -1,4 +1,4 @@
-export const runtime = "edge";
+// export const runtime = "edge";
 
 import BlogLayoutThree from "@/components/blog/BlogLayoutThree";
 import Categories from "@/components/blog/Categories";
