@@ -4,8 +4,24 @@ import type { Metadata } from "next";
 export const METADATA: Metadata = {
 	title: siteMetadata.title,
 	description: siteMetadata.description,
+	robots: {
+		index: true,
+		follow: true,
+		nocache: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			noimageindex: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 	keywords: siteMetadata.keywords,
 	manifest: siteMetadata.manifest,
+	alternates: {
+		canonical: siteMetadata.siteUrl,
+	},
 	icons: [
 		{
 			rel: "icon",
@@ -77,6 +93,7 @@ export const METADATA: Metadata = {
 			url: "/favicon/apple-icon-180x180.png",
 		},
 	],
+
 	openGraph: {
 		title: siteMetadata.title,
 		description: siteMetadata.description,
@@ -111,18 +128,12 @@ export const METADATA: Metadata = {
 		],
 		site: siteMetadata.siteUrl,
 	},
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			noimageindex: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
+	category: "Personal",
+	other: {
+		url: siteMetadata.siteUrl,
 	},
+	publisher: "Faiz Khan",
+	creator: "Faiz Khan",
 };
 
 export const JSON_LD = {

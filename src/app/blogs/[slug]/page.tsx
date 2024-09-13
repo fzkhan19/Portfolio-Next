@@ -40,6 +40,9 @@ export async function generateMetadata({
 	return {
 		title: blog.title,
 		description: blog.description,
+		alternate: {
+			canonical: siteMetadata.siteUrl + blog.url,
+		},
 		openGraph: {
 			title: blog.title,
 			description: blog.description,
