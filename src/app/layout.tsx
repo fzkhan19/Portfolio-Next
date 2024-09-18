@@ -5,8 +5,8 @@ import { siteMetadata } from "@/lib/siteMetaData";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
-import "./globals.css";
 import Script from "next/script";
+import "./globals.css";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -45,7 +45,7 @@ export default function RootLayout({
 						Software Development | Personal Website | Software Engineer | React
 						| Typescript | Node.js | Python | MongoDB | TailwindCSS | Express.js
 					</h1>
-					<h2>{siteMetadata.title}</h2>
+					<h2 className="sr-only">{siteMetadata.title}</h2>
 					<h2 className="sr-only">{siteMetadata.description}</h2>
 					<h2 className="sr-only">
 						Next.js | React | Typescript | Node.js | TailwindCSS | Python | AWS
