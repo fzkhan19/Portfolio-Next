@@ -32,9 +32,7 @@ export default function RootLayout({
 		<html lang="en" suppressHydrationWarning>
 			<body className={cn("", inter.variable, manrope.variable)}>
 				<main className="no-scrollbar overflow-x-hidden overflow-y-scroll scroll-smooth">
-					<Script>
-						<Analytics />
-					</Script>
+					<Analytics />
 					<Script
 						// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 						dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
