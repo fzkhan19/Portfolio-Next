@@ -3,6 +3,7 @@ import Dockbar from "@/components/layout/dockbar";
 import { JSON_LD, METADATA } from "@/constants/Metadata";
 import { siteMetadata } from "@/lib/siteMetaData";
 import { cn } from "@/lib/utils";
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import Script from "next/script";
@@ -31,6 +32,9 @@ export default function RootLayout({
 		<html lang="en" suppressHydrationWarning>
 			<body className={cn("", inter.variable, manrope.variable)}>
 				<main className="no-scrollbar overflow-x-hidden overflow-y-scroll scroll-smooth">
+					<Script>
+						<Analytics />
+					</Script>
 					<Script
 						// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 						dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
