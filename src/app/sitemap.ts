@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
 	// Dynamic Blog URLs
 	const blogUrls = allBlogs.map((blog) => ({
-		url: `${baseUrl}/blogs/${blog.url}`,
+		url: `${baseUrl}${blog.url}`,
 		lastModified: blog.updatedAt
 			? new Date(blog.updatedAt)
 			: new Date(blog.publishedAt),
