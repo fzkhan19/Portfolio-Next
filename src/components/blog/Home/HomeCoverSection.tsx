@@ -27,13 +27,19 @@ const HomeCoverSection = ({ blogs }: { blogs: any }) => {
 				<div className="z-0 flex w-full flex-col items-start justify-center p-6 text-light sm:p-8 md:p-12 lg:w-3/4 lg:p-16">
 					<Tag link={`/categories/${slug(blog.tags[0])}`} name={blog.tags[0]} />
 					<Link href={blog.url} className="mt-6">
-						<h1 className="font-bold text-lg capitalize sm:text-xl md:text-3xl lg:text-4xl">
+						<h1
+							className="font-bold text-lg capitalize sm:text-xl md:text-3xl lg:text-4xl"
+							aria-label={`Featured blog post: ${blog.title}`}
+						>
 							<span className="bg-[length:0px_6px] bg-gradient-to-r bg-left-bottom from-accent to-accent bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_6px] dark:from-accent/50 dark:to-accent/50 ">
 								{blog.title}
 							</span>
 						</h1>
 					</Link>
-					<p className="mt-4 hidden font-in sm:inline-block md:text-lg lg:text-xl">
+					<p
+						className="mt-4 hidden font-in sm:inline-block md:text-lg lg:text-xl"
+						aria-label={`Blog preview: ${blog.description}`}
+					>
 						{blog.description}
 					</p>
 				</div>

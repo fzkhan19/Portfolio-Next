@@ -90,7 +90,9 @@ export default function Hero() {
 					<div className="flex flex-wrap gap-1">
 						{DATA.skills.map((skill, id) => (
 							<BlurFade key={skill} delay={BLUR_FADE_DELAY * 7 + id * 0.05}>
-								<Badge key={skill}>{skill}</Badge>
+								<Badge key={skill} className="cursor-cell">
+									{skill}
+								</Badge>
 							</BlurFade>
 						))}
 					</div>
