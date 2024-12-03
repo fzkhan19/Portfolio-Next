@@ -42,7 +42,7 @@ export async function GET() {
 	const response = await getNowPlaying();
 
 	if (response.status === 204 || response.status > 400) {
-		return NextResponse.json({ isPlaying: false });
+		return NextResponse.json({ isPlaying: false, response: response.json() });
 	}
 
 	const song = await response.json();

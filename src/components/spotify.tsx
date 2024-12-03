@@ -9,6 +9,7 @@ export default function Spotify() {
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	const fetcher = (url: any) => fetch(url).then((r) => r.json());
 	const { data } = useSWR("/api/getNowPlaying", fetcher);
+
 	return (
 		<>
 			<section className="flex w-full justify-center pt-24">
@@ -19,7 +20,7 @@ export default function Spotify() {
 					href={
 						data?.isPlaying
 							? data.songUrl
-							: "https://open.spotify.com/user/erence21?si=yTsrZT5JSHOp7tn3ist7Ig"
+							: "https://open.spotify.com/user/zj9qg91w6epctpv0kb47a9n0t"
 					}
 				>
 					<div>

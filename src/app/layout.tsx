@@ -34,12 +34,6 @@ export default function RootLayout({
 				<main className="no-scrollbar overflow-x-hidden overflow-y-scroll scroll-smooth">
 					<Analytics />
 					<Script
-						defer
-						data-website-id="6733555e3c96d00034ceea9a"
-						data-domain="faiz-khan.in"
-						src="https://datafa.st/js/script.js"
-					/>
-					<Script
 						// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 						dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
 						type="application/ld+json"
