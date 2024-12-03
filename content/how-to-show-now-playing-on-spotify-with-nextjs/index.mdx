@@ -1,0 +1,209 @@
+---
+title: "How to Show Now Playing on Spotify with Next.js"
+description: Spotify API grants us access to display the currently playing song on Spotify.
+image: "../../public/blogs/spotify-nextjs.jpg"
+publishedAt: "2024-12-03"
+updatedAt: "2024-12-03"
+author: "Faiz Khan"
+isPublished: true
+tags:
+  - Next.js
+  - Spotify
+  - Web Development
+---
+
+### Introduction
+
+With Spotify's API, you can showcase the currently playing song on your website. Using Next.js, you can keep your API keys secure while leveraging built-in API routes. In this guide, we'll cover:
+
+1. Creating a Spotify Developer Application
+2. Authenticating your account
+3. Building API routes in Next.js
+4. Using the API to display your "Now Playing" track
+
+---
+
+### 1. Create a Spotify Developer Application
+
+1. Visit the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard).
+2. Click **Create an App** and provide the necessary details like app name and description.
+3. Once created, note your **Client ID** and **Client Secret** (keep them private!).
+4. Under **Edit Settings**, add `http://localhost:3000` as a **Redirect URI**.
+
+You’ve now set up your Spotify app!
+
+---
+
+### 2. Authenticate Your Account
+
+Spotify requires authentication to access user data. Here’s how:
+
+#### Step 1: Generate the Authorization URL
+Use the following link, replacing `CLIENT_ID_HERE` with your Client ID:
+
+```plaintext
+https://accounts.spotify.com/authorize?client_id=CLIENT_ID_HERE&response_type=code&redirect_uri=http%3A%2F%2Flocalhost:3000&scope=user-read-currently-playing
+```
+
+Open this link in your browser and log in to Spotify. You’ll be redirected to a URL like this:
+
+```plaintext
+http://localhost:3000/?code=AQBeA9SD7QbA9hUfv_TfmatYxT51CY87...
+```
+
+Copy the `code` value from the URL parameters.
+
+#### Step 2: Exchange the Code for Tokens
+Encode your `CLIENT_ID:CLIENT_SECRET` in Base64 (use [Base64 Encode Tool](https://www.base64encode.org)).
+
+Run the following `curl` command, replacing placeholders with your data:
+
+```bash
+curl -H "Authorization: Basic BASE64_ENCODED_CLIENT" \
+-d grant_type=authorization_code \
+-d code=YOUR_CODE_HERE \
+-d redirect_uri=http%3A%2F%2Flocalhost:3000 \
+https://accounts.spotify.com/api/token
+```
+
+You’ll receive a JSON response containing an `access_token` and `refresh_token`. Save the `refresh_token`; it will be used for future requests.
+
+---
+
+### 3. Creating API Routes in Next.js
+
+Create an API route in your Next.js app at `/pages/api/spotify.js`. Install the required `querystring` package:
+
+```bash
+npm install querystring
+```
+
+Here’s the API route code:
+
+```javascript
+import querystring from 'querystring';
+
+const {
+  SPOTIFY_CLIENT_ID: client_id,
+  SPOTIFY_CLIENT_SECRET: client_secret,
+  SPOTIFY_REFRESH_TOKEN: refresh_token,
+} = process.env;
+
+const basic = Buffer.from(`${client_id}:${client_secret}`).toString('base64');
+const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
+const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
+
+const getAccessToken = async () => {
+  const response = await fetch(TOKEN_ENDPOINT, {
+    method: 'POST',
+    headers: {
+      Authorization: `Basic ${basic}`,
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: querystring.stringify({
+      grant_type: 'refresh_token',
+      refresh_token,
+    }),
+  });
+
+  return response.json();
+};
+
+export const getNowPlaying = async () => {
+  const { access_token } = await getAccessToken();
+
+  return fetch(NOW_PLAYING_ENDPOINT, {
+    headers: {
+      Authorization: `Bearer ${access_token}`,
+    },
+  });
+};
+
+export default async (_, res) => {
+  const response = await getNowPlaying();
+
+  if (
+    response.status === 204 ||
+    response.status > 400 ||
+    response.data.currently_playing_type !== 'track'
+  ) {
+    return res.status(200).json({ isPlaying: false });
+  }
+
+  const data = await response.json();
+  res.status(200).json({
+    isPlaying: data.is_playing,
+    title: data.item.name,
+    album: data.item.album.name,
+    artist: data.item.album.artists.map((artist) => artist.name).join(', '),
+    albumImageUrl: data.item.album.images[0].url,
+    songUrl: data.item.external_urls.spotify,
+  });
+};
+```
+
+Add your Spotify credentials to `.env.local`:
+
+```plaintext
+SPOTIFY_CLIENT_ID=your_client_id
+SPOTIFY_CLIENT_SECRET=your_client_secret
+SPOTIFY_REFRESH_TOKEN=your_refresh_token
+```
+
+---
+
+### 4. Use the API in Next.js
+
+Install `swr` and `react-icons` for fetching and rendering data:
+
+```bash
+npm install swr react-icons
+```
+
+Modify your `/pages/index.js` file to fetch and display Spotify data:
+
+```javascript
+import useSWR from 'swr';
+import { SiSpotify } from 'react-icons/si';
+
+export default function Home() {
+  const fetcher = (url) => fetch(url).then((res) => res.json());
+  const { data } = useSWR('/api/spotify', fetcher);
+
+  return (
+    <div>
+      <a
+        href={
+          data?.isPlaying
+            ? data.songUrl
+            : 'https://open.spotify.com/user/your_spotify_id'
+        }
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {data?.isPlaying ? (
+          <>
+            <img src={data.albumImageUrl} alt={data.album} />
+            <h3>{data.title}</h3>
+            <p>{data.artist}</p>
+          </>
+        ) : (
+          <p>Not Listening</p>
+        )}
+        <SiSpotify />
+      </a>
+    </div>
+  );
+}
+```
+
+---
+
+### Conclusion
+
+Congratulations! You’ve successfully integrated Spotify’s "Now Playing" feature into your Next.js website. This API-based integration keeps your data secure while providing a dynamic user experience.
+
+**Live Demo**: [faiz-khan.in](https://faiz-khan.in)
+ - Scroll down to the bottom of the page to see the "Now Playing" section.
+
+Happy coding! 🎵
