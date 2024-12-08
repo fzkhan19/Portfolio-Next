@@ -1,73 +1,136 @@
-# Portfolio-Next
+# Portfolio Website Setup Guide
 
-A modern, high-performance portfolio website built with Next.js, TailwindCSS, shadcn components, and optimized with Million.js.
+This guide will help you set up and customize your own portfolio website, even if you're not familiar with programming. Follow these steps carefully.
 
-## Features
+## Step 1: Setting Up Your Computer
 
-- **Next.js**: React framework for server-side rendering and static site generation
-- **TailwindCSS**: Utility-first CSS framework for rapid UI development
-- **shadcn Components**: Pre-built, customizable UI components
-- **Million.js**: Performance optimization for React components
-- **Biome**: Fast linter and formatter for JavaScript, TypeScript, and more
-- **Husky & lint-staged**: Git hooks for code quality checks
-- **Bun**: Fast all-in-one JavaScript runtime and package manager
+### Install Required Software
 
-## Getting Started
+1. **GitHub Desktop**
+   - Go to https://desktop.github.com/
+   - Download and install GitHub Desktop for your operating system
+   - Create a GitHub account at https://github.com/signup if you don't have one
+   - Open GitHub Desktop and sign in with your account
 
-### Prerequisites
+2. **Node.js**
+   - Visit https://nodejs.org/
+   - Download and install the "LTS" (Long Term Support) version
+   - Follow the installation wizard's default settings
 
-- [Bun](https://bun.sh/) (>=1.0.0)
+3. **Bun**
+   - Open Terminal (Mac/Linux) or Command Prompt (Windows)
+   - Copy and paste this command:
+     
+     curl -fsSL https://bun.sh/install | bash
+     
+   - For Windows, follow the Windows-specific instructions at https://bun.sh/docs/installation
 
-### Installation
+## Step 2: Getting the Website Files
 
-1. Clone the repository:
-   ```sh
-   git clone [your-repo-url]
-   cd portfolio-next
+1. **Fork the Repository**
+   - Go to [original-repository-url]
+   - Click the "Fork" button in the top-right corner
+   - This creates your own copy of the website
 
-2. Install dependencies:
-`bun install`
+2. **Clone to Your Computer**
+   - Open GitHub Desktop
+   - Click "File" → "Clone Repository"
+   - Select your forked repository
+   - Choose where to save it on your computer
+   - Click "Clone"
 
-3. Development
-Start the development server:
-`bun dev`
+## Step 3: Setting Up the Project
 
-Open http://localhost:3000 to view the site.
+1. **Open Terminal/Command Prompt**
+   - Navigate to your project folder:
+     
+     cd path/to/your/portfolio-next
+     
 
-4. Building for Production
-Create an optimized production build:
-`bun build`
+2. **Install Dependencies**
+   - Run this command:
+     
+     bun install
+     
+   - Wait for installation to complete
 
-5. Start the production server:
-`bun start`
+## Step 4: Customizing Your Portfolio
 
+### Update Your Information
 
-Project Structure
-.
-├── public          # Static assets
-├── src
-│   ├── app         # Next.js app directory
-│   ├── components  # React components
-│   ├── constants   # Constant values and content
-│   ├── lib         # Utility functions
-│   └── styles      # Global styles
-├── .husky          # Husky configuration
-├── biome.json      # Biome configuration
-├── tailwind.config.ts # Tailwind configuration
-└── package.json    # Project dependencies and scripts
+1. **Personal Details**
+   - Navigate to `src/lib/siteMetaData.ts`
+   - Open in any text editor (Notepad, TextEdit)
+   - Update:
+     - title (your name or website name)
+     - author (your name)
+     - description (about your website)
+     - email (your contact email)
+     - social media links
 
-Customization
-Update src/constants/Metadata.ts to change site metadata
-Modify src/constants/content.ts to update portfolio content
-Adjust tailwind.config.ts for theme customization
-Performance Testing
+2. **Resume Information**
+   - Go to `src/constants/resume.tsx`
+   - Update:
+     - name
+     - location
+     - description (your bio)
+     - work experience
+     - education
+     - skills
+     - projects
 
-Run Million.js performance linting:
-`bun dlx million@latest`
+3. **Profile Picture**
+   - Add your photo to the `public` folder
+   - Update the image path in `src/constants/resume.tsx`
 
-Linting and Formatting
-Run Biome linter:
-`bun lint`
+## Step 5: Preview Your Website
 
-Auto-fix linting and formatting issues:
-`bun format`
+1. **Run Locally**
+   - In Terminal/Command Prompt, run:
+     
+     bun dev
+     
+   - Open your web browser
+   - Visit: http://localhost:3000
+
+## Step 6: Publishing Your Changes
+
+1. **Save Changes (GitHub Desktop)**
+   - Open GitHub Desktop
+   - You'll see your changes listed
+   - Add a summary (e.g., "Updated personal information")
+   - Click "Commit to main"
+   - Click "Push origin"
+
+## Step 7: Deploy Your Website
+
+1. **Setup Vercel**
+   - Go to https://vercel.com/
+   - Sign up using your GitHub account
+   - Click "New Project"
+   - Select your portfolio repository
+   - Click "Deploy"
+
+2. **Your Website is Live!**
+   - Vercel will provide you with a URL
+   - You can add a custom domain in Vercel's settings
+
+## Making Future Updates
+
+1. **Edit Files**
+   - Make changes to your files
+   - Preview locally with `bun dev`
+
+2. **Publish Updates**
+   - Open GitHub Desktop
+   - Commit your changes
+   - Push to GitHub
+   - Vercel will automatically update your site
+
+## Need Help?
+
+- Email: faizpathan1717@gmail.com
+- Phone: +917802844364
+- For general questions: Create an issue in the GitHub repository
+
+Remember to regularly backup your changes and test your website locally before pushing updates live.
