@@ -245,7 +245,7 @@ export const DATA = {
 			links: [
 				{
 					type: "Website",
-					href: "https://vote-in.up.railway.app/",
+					href: "https://votein.up.railway.app/",
 					icon: <Icons.globe className="size-3" />,
 				},
 				{
